@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Receiving SMS Issue</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: ltr;
+      text-align: left;
+      margin: 20px;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .red-border {
+      border: 2px solid red;
+      padding: 5px;
+    }
+    #preview {
+      margin-top: 30px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    #previewButton {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    #previewButton:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+ <h2>receiving SMS</h2>
+<a href="http://altkb-ccc.com/article/2685
+">http://altkb-ccc.com/article/2685</a>
+  <form id="ticketForm">
+    <div class="question" id="q1" data-question="Conversation #">
+      <label for="conversation">1. Conversation #</label><br>
+      <input type="text" id="conversation" name="q1">
+    </div>
+
+    <div class="question" id="q2" data-question="The customer is facing issues with receiving SMS:">
+      <label for="smsIssue">2. The customer is facing issues with receiving SMS:</label><br>
+      <input type="text" id="smsIssue" name="q2">
+    </div>
+
+    <div class="question" id="q3" data-question="MSISDN:">
+      <label for="msisdn">3. MSISDN:</label><br>
+      <input type="text" id="msisdn" name="q3">
+    </div>
+
+    <div class="question" id="q4" data-question="Last four digits of ID:">
+      <label for="idDigits">4. Last four digits of ID:</label><br>
+      <input type="text" id="idDigits" name="q4">
+    </div>
+
+    <div class="question" id="q5" data-question="Customer Name:">
+      <label for="customerName">5. Customer Name:</label><br>
+      <input type="text" id="customerName" name="q5">
+    </div>
+
+    <div class="question" id="q6" data-question="Bar status:">
+      <label for="barStatus">6. Bar status:</label><br>
+      <input type="text" id="barStatus" name="q6">
+    </div>
+
+    <div class="question" id="q7" data-question="Since when?">
+      <label for="sinceWhen">7. Since when?</label><br>
+      <input type="text" id="sinceWhen" name="q7">
+    </div>
+
+    <div class="question" id="q8" data-question="From all numbers or 1 number?">
+      <label>8. From all numbers or 1 number?</label><br>
+      <input type="radio" id="allNumbers" name="q8" value="all numbers">
+      <label for="allNumbers">all numbers</label>
+      <input type="radio" id="oneNumber" name="q8" value="1 number/operator">
+      <label for="oneNumber">1 number/operator</label>
+    </div>
+
+    <div class="question" id="q9" data-question="Call 900 and was able to hear the IVR.">
+      <label>9. Call 900 and was able to hear the IVR.</label><br>
+      <input type="radio" id="ivrYes" name="q9" value="yes">
+      <label for="ivrYes">yes</label>
+      <input type="radio" id="ivrNo" name="q9" value="no">
+      <label for="ivrNo">no</label>
+    </div>
+
+    <div class="question" id="q10" data-question="Can receive Jawwy SMS?">
+      <label>10. Can receive Jawwy SMS?</label><br>
+      <input type="radio" id="jawwySmsYes" name="q10" value="yes">
+      <label for="jawwySmsYes">yes</label>
+      <input type="radio" id="jawwySmsNo" name="q10" value="no">
+      <label for="jawwySmsNo">no</label>
+    </div>
+
+    <div class="question" id="q11" data-question="(Android) check the messaging settings and messaging center number should be (+966*******):">
+      <label>11. (Android) check the messaging settings and messaging center number should be (+966*******):</label><br>
+      <input type="radio" id="androidYes" name="q11" value="yes">
+      <label for="androidYes">yes</label>
+      <input type="radio" id="androidNo" name="q11" value="no">
+      <label for="androidNo">no</label>
+    </div>
+
+    <div class="question" id="q12" data-question="Error message (screenshot) from the sender device:">
+      <label>12. Error message (screenshot) from the sender device:</label><br>
+      <input type="radio" id="errorYes" name="q12" value="yes">
+      <label for="errorYes">yes</label>
+      <input type="radio" id="errorNo" name="q12" value="no">
+      <label for="errorNo">no</label>
+    </div>
+
+    <div class="question" id="q13" data-question="Issue is while roaming? Confirm using the country code even if it’s to a Saudi number:">
+      <label>13. Issue is while roaming? Confirm using the country code even if it’s to a Saudi number:</label><br>
+      <input type="radio" id="roamingYes" name="q13" value="yes">
+      <label for="roamingYes">yes</label>
+      <input type="radio" id="roamingNo" name="q13" value="no">
+      <label for="roamingNo">no</label>
+    </div>
+
+    <div class="question" id="q14" data-question="Confirm using country code if the SMS international:">
+      <label>14. Confirm using country code if the SMS international:</label><br>
+      <input type="radio" id="intlYes" name="q14" value="yes">
+      <label for="intlYes">yes</label>
+      <input type="radio" id="intlNo" name="q14" value="no">
+      <label for="intlNo">no</label>
+    </div>
+
+    <div class="question" id="q15" data-question="If he has a valid data plan and call, does it work fine?">
+      <label>15. If he has a valid data plan and call, does it work fine?</label><br>
+      <input type="radio" id="dataCallYes" name="q15" value="yes">
+      <label for="dataCallYes">yes</label>
+      <input type="radio" id="dataCallNo" name="q15" value="no">
+      <label for="dataCallNo">no</label>
+      <input type="radio" id="noPlan" name="q15" value="no plan">
+      <label for="noPlan">no plan</label>
+    </div>
+
+    <div class="question" id="q16" data-question="Network Reset Settings:">
+      <label>16. Network Reset Settings:</label><br>
+      <input type="radio" id="networkResetYes" name="q16" value="yes">
+      <label for="networkResetYes">yes</label>
+      <input type="radio" id="networkResetNo" name="q16" value="no">
+      <label for="networkResetNo">no</label>
+    </div>
+
+    <div class="question" id="q17" data-question="Tried in another device?">
+      <label>17. Tried in another device?</label><br>
+      <input type="radio" id="deviceYes" name="q17" value="yes">
+      <label for="deviceYes">yes</label>
+      <input type="radio" id="deviceNo" name="q17" value="no">
+      <label for="deviceNo">no</label>
+      <input type="radio" id="deviceEsim" name="q17" value="Esim">
+      <label for="deviceEsim">Esim</label>
+    </div>
+
+    <div class="question" id="q18" data-question="3 Fresh samples within 7 days showing date, time and receiver number:">
+      <label for="samples">18. 3 Fresh samples within 7 days showing date, time and receiver number:</label><br>
+      <input type="text" id="samples" name="q18">
+    </div>
+
+    <div class="question" id="q19" data-question="Phone number:">
+      <label for="phoneNumber">19. Phone number:</label><br>
+      <input type="text" id="phoneNumber" name="q19">
+    </div>
+
+    <div class="question" id="q20" data-question="Additional note:">
+      <label for="additionalNote">20. Additional note:</label><br>
+      <input type="text" id="additionalNote" name="q20">
+    </div>
+
+    <button type="button" id="previewButton">Preview Ticket</button>
+  </form>
+
+  <div id="preview">
+    <h2>Ticket Preview</h2>
+    <div id="previewContent"></div>
+  </div>
+
+  <script>
+    document.getElementById('previewButton').addEventListener('click', function() {
+      // Clear previous preview
+      var previewContent = document.getElementById('previewContent');
+      previewContent.innerHTML = '';
+      
+      // Iterate through each question
+      var questions = document.querySelectorAll('.question');
+      
+      questions.forEach(function(qDiv, index) {
+        // Remove any previous red border
+        qDiv.classList.remove('red-border');
+  
+        var questionText = qDiv.getAttribute('data-question');
+        var answer = '';
+  
+        // Check for text input first
+        var textInput = qDiv.querySelector('input[type="text"]');
+        if(textInput) {
+          answer = textInput.value.trim();
+          if(answer === '') {
+            qDiv.classList.add('red-border');
+          }
+        } else {
+          // Otherwise, check for a selected radio button
+          var selectedRadio = qDiv.querySelector('input[type="radio"]:checked');
+          if(selectedRadio) {
+            answer = selectedRadio.value;
+          } else {
+            qDiv.classList.add('red-border');
+          }
+        }
+        
+        // Build preview line (if answer is provided, append it)
+        var displayText = (index + 1) + '. ' + questionText;
+        if(answer !== '') {
+          displayText += ' - ' + answer;
+        }
+  
+        var p = document.createElement('p');
+        p.textContent = displayText;
+        previewContent.appendChild(p);
+      });
+    });
+  </script>
+ <h3>Abdullah.61992</h3>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Escalation Application</title>
+ </style> 
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: ltr; /* يسار يمين */
+      text-align: left;
+      margin: 20px;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .question.error {
+      border-color: red;
+    }
+    .question input[type="text"],
+    .question textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+    }
+    .question input[type="radio"] {
+      margin-right: 10px;
+    }
+    .btn-preview {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .preview {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 20px;
+      display: none;
+    }
+      <style>
+        #watermark {
+            height: 30000vw;
+            width: 300vw;
+            position: fixed;
+            z-index: 9999;
+
+            }
+
+            #watermark span {
+                position: absolute;
+                top: -150%;
+                left: -200%;
+                word-spacing: 21px;
+                font-size: 42px;
+                line-height: 3;
+                pointer-events: none;
+                opacity: 0.00;
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+            }
+   
+   
+  </style>
+</head>
+<body>
+<div id="watermark">
+        <span>
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                            Abdullah Abdulaziz Al-Harbi 61992
+                Abdullah Abdulaziz Al-Harbi 61992
+                    </span>
+
+  <h1>CRM Categories:
+ Complaint > Recharging > ((Levels 3/4 depends on the actual scenario))</h1>
+  <h2>Payment Not Found</h2>
+<a href="https://altkb-ccc.com/article/2699
+">https://altkb-ccc.com/article/2699</a>
+
+  <form id="ticketForm">
+    <!-- 1. Conversation # -->
+    <div class="question" id="q1">
+      <label>1- Conversation #:</label><br>
+      <input type="text" name="conversation_number" id="conversation_number">
+    </div>
+
+    <!-- 2. Recharge Success (Yes/No) -->
+    <div class="question" id="q2">
+      <label>2- The customer made a successful recharge but the payment is not found on ItsOn (CSP):</label><br>
+      <input type="radio" name="recharge_successful" value="Yes" id="recharge_yes"> <label for="recharge_yes">Yes</label>
+      <input type="radio" name="recharge_successful" value="No" id="recharge_no"> <label for="recharge_no">No</label>
+    </div>
+
+    <!-- 3. MSISDN -->
+    <div class="question" id="q3">
+      <label>3- MSISDN:</label><br>
+      <input type="text" name="msisdn" id="msisdn">
+    </div>
+
+    <!-- 4. Last 4 digits of the IqamaNational ID -->
+    <div class="question" id="q4">
+      <label>4- Last 4 digits of the IqamaNational ID:</label><br>
+      <input type="text" name="iqama_id" id="iqama_id">
+    </div>
+
+    <!-- 5. Customer Name -->
+    <div class="question" id="q5">
+      <label>5- Customer Name:</label><br>
+      <input type="text" name="customer_name" id="customer_name">
+    </div>
+
+    <!-- 6. Recharge amount -->
+    <div class="question" id="q6">
+      <label>6- Recharge amount:</label><br>
+      <input type="text" name="recharge_amount" id="recharge_amount">
+    </div>
+
+    <!-- 7. Recharge method -->
+    <div class="question" id="q7">
+      <label>7- Recharge method:</label><br>
+      <input type="text" name="recharge_method" id="recharge_method">
+    </div>
+
+    <!-- 8. Deduction SMS Attached (Yes/No) -->
+    <div class="question" id="q8">
+      <label>8- Deduction SMS is attached to the conversation:</label><br>
+      <input type="radio" name="sms_attached" value="Yes" id="sms_yes"> <label for="sms_yes">Yes</label>
+      <input type="radio" name="sms_attached" value="No" id="sms_no"> <label for="sms_no">No</label>
+    </div>
+
+    <!-- 9. Screenshot from e-bankingSadad -->
+    <div class="question" id="q9">
+      <label>9- If recharge was through e-bankingSadad, a screenshot from the bank app for the transaction details and reference number is MANDATORY:</label><br>
+      <input type="text" name="bank_screenshot" id="bank_screenshot">
+    </div>
+
+    <!-- 10. Contact number -->
+    <div class="question" id="q10">
+      <label>10- Contact number:</label><br>
+      <input type="text" name="contact_number" id="contact_number">
+    </div>
+
+    <!-- 11. Additional note -->
+    <div class="question" id="q11">
+      <label>11- Additional note:</label><br>
+      <textarea name="additional_note" id="additional_note" rows="4"></textarea>
+    </div>
+
+    <button type="button" class="btn-preview" onclick="previewTicket()">Preview Ticket</button>
+  </form>
+
+  <div class="preview" id="previewSection">
+    <h3>Preview Ticket:</h3>
+    <div id="previewContent"></div>
+  </div>
+
+  <script>
+    function previewTicket() {
+      // إزالة تمييز الأخطاء السابقة
+      document.querySelectorAll('.question').forEach(q => q.classList.remove('error'));
+
+      const questions = document.querySelectorAll('.question');
+      let previewContent = "";
+      
+      questions.forEach(function(q) {
+        const label = q.querySelector('label').innerText;
+        let answer = "";
+        
+        // التحقق من وجود مدخلات راديو مُختارة
+        const radioChecked = q.querySelector('input[type="radio"]:checked');
+        if (radioChecked) {
+          answer = radioChecked.value;
+        } else {
+          // التحقق من المدخلات النصية أو textarea
+          const textInput = q.querySelector('input[type="text"]');
+          const textarea = q.querySelector('textarea');
+          if (textInput) {
+            answer = textInput.value.trim();
+          } else if (textarea) {
+            answer = textarea.value.trim();
+          }
+        }
+        
+        // إذا لم يُجب على السؤال، نُضيف برواز أحمر  ونظهر السؤال فقط
+        if (!answer) {
+          q.classList.add('error');
+          previewContent += `<div><strong>${label}</strong></div>`;
+        } else {
+          previewContent += `<div><strong>${label}</strong>: ${answer}</div>`;
+        }
+      });
+      
+      document.getElementById("previewContent").innerHTML = previewContent;
+      document.getElementById("previewSection").style.display = "block";
+    }
+  </script>
+ <h3>Abdullah.61992</h3>
+</body>
+</html>

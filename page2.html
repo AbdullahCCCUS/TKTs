@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <title>Can't Use Local Data Ticket</title>
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: ltr;
+      text-align: left;
+      margin: 20px;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .red-border {
+      border: 2px solid red;
+      padding: 5px;
+    }
+    #preview {
+      margin-top: 30px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    #previewButton {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    #previewButton:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+ <h2>can’t use data</h2>
+<h1>     Complaint > Data > Browsing Issue > Resync: OK</h1>
+<a href="https://altkb-ccc.com/article/4695
+">https://altkb-ccc.com/article/4695</a>
+  <form id="ticket-form">
+    <!-- 1 -->
+    <div class="form-group" id="group-conversation-number">
+      <label for="conversation-number">1. Conversation #:</label>
+      <input type="text" id="conversation-number" name="conversation-number" />
+    </div>
+
+    <!-- 2 -->
+    <div class="form-group" id="group-bundle-validity">
+      <label for="bundle-validity">
+        2. The customer has a valid bundle with enough data allowance but can’t use data:
+      </label>
+      <input type="text" id="bundle-validity" name="bundle-validity" />
+    </div>
+
+    <!-- 3 -->
+    <div class="form-group" id="group-msisdn">
+      <label for="msisdn">3. MSISDN:</label>
+      <input type="text" id="msisdn" name="msisdn" />
+    </div>
+
+    <!-- 4 -->
+    <div class="form-group" id="group-id-last-four">
+      <label for="id-last-four">4. Last four digits of ID:</label>
+      <input type="text" id="id-last-four" name="id-last-four" />
+    </div>
+
+    <!-- 5 -->
+    <div class="form-group" id="group-customer-name">
+      <label for="customer-name">5. Customer name:</label>
+      <input type="text" id="customer-name" name="customer-name" />
+    </div>
+
+    <!-- 6 -->
+    <div class="form-group" id="group-since-when">
+      <label for="since-when">6. Since when?</label>
+      <input type="text" id="since-when" name="since-when" />
+    </div>
+
+    <!-- 7 -->
+    <div class="form-group" id="group-resync-result">
+      <label for="resync-result">7. Resync Result is:</label>
+      <input type="text" id="resync-result" name="resync-result" />
+    </div>
+
+    <!-- 8 -->
+    <div class="form-group" id="group-apn">
+      <label>8. APN Settings:</label>
+      <input type="radio" id="apn-yes" name="apn" value="Yes" />
+      <label for="apn-yes" class="radio-label">Yes</label>
+      <input type="radio" id="apn-no" name="apn" value="No" />
+      <label for="apn-no" class="radio-label">No</label>
+    </div>
+
+    <!-- 9 -->
+    <div class="form-group" id="group-tried">
+      <label>9. Tried in another device?</label>
+      <input type="radio" id="tried-yes" name="tried" value="Yes" />
+      <label for="tried-yes" class="radio-label">Yes</label>
+      <input type="radio" id="tried-no" name="tried" value="No" />
+      <label for="tried-no" class="radio-label">No</label>
+    </div>
+
+    <!-- 10 -->
+    <div class="form-group" id="group-calls">
+      <label>10. If he has a valid call plan, can make calls?</label>
+      <input type="radio" id="calls-yes" name="calls" value="Yes" />
+      <label for="calls-yes" class="radio-label">Yes</label>
+      <input type="radio" id="calls-no" name="calls" value="No" />
+      <label for="calls-no" class="radio-label">No</label>
+      <input type="radio" id="calls-no-plan" name="calls" value="No Plan" />
+      <label for="calls-no-plan" class="radio-label">No Plan</label>
+    </div>
+
+    <!-- 11 -->
+    <div class="form-group" id="group-receive">
+      <label>11. Can receive calls/SMS?</label>
+      <input type="radio" id="receive-yes" name="receive" value="Yes" />
+      <label for="receive-yes" class="radio-label">Yes</label>
+      <input type="radio" id="receive-no" name="receive" value="No" />
+      <label for="receive-no" class="radio-label">No</label>
+    </div>
+
+    <!-- 12 -->
+    <div class="form-group" id="group-places">
+      <label>12. In all places or 1 place?</label>
+      <input type="radio" id="places-all" name="places" value="All Places" />
+      <label for="places-all" class="radio-label">All Places</label>
+      <input type="radio" id="places-one" name="places" value="One Place" />
+      <label for="places-one" class="radio-label">One Place</label>
+    </div>
+
+    <!-- Conditional: location coordinates if "One Place" is selected -->
+    <div class="form-group" id="group-location-coordinates" style="display: none;">
+      <label>
+        IF IN ONE PLACE ONLY, check coverage there and get the location coordinates:
+      </label>
+      <input type="text" id="location-coordinates" name="location-coordinates" />
+    </div>
+
+    <!-- 13 -->
+    <div class="form-group" id="group-contact-number">
+      <label for="contact-number">13. Contact number:</label>
+      <input type="text" id="contact-number" name="contact-number" />
+    </div>
+
+    <!-- 14 -->
+    <div class="form-group" id="group-additional-note">
+      <label for="additional-note">14. Additional note:</label>
+      <textarea id="additional-note" name="additional-note"></textarea>
+    </div>
+
+    <button type="button" id="preview-button" style="background-color: green; color: white;">
+      Preview Ticket
+    </button>
+  </form>
+
+  <div class="preview-section" id="preview-section">
+    <h3>Can't Use Local Data</h3>
+    <!-- Preview content will be dynamically inserted here -->
+  </div>
+
+  <script>
+    document.getElementById("preview-button").addEventListener("click", function () {
+      // Clear previous preview
+      let previewSection = document.getElementById("preview-section");
+      previewSection.innerHTML = "<h3>Can't Use Local Data</h3>";
+
+      // تعريف الحقول مع خصائصها (إذا كانت من نوع radio يتم استخدام الخاصية type)
+      let fields = [
+        { id: "conversation-number", label: "1. Conversation #:" },
+        { id: "bundle-validity", label: "2. The customer has a valid bundle with enough data allowance but can’t use data:" },
+        { id: "msisdn", label: "3. MSISDN:" },
+        { id: "id-last-four", label: "4. Last four digits of ID:" },
+        { id: "customer-name", label: "5. Customer name:" },
+        { id: "since-when", label: "6. Since when?" },
+        { id: "resync-result", label: "7. Resync Result is:" },
+        { id: "apn", label: "8. APN Settings:", type: "radio" },
+        { id: "tried", label: "9. Tried in another device?", type: "radio" },
+        { id: "calls", label: "10. If he has a valid call plan, can make calls?", type: "radio" },
+        { id: "receive", label: "11. Can receive calls/SMS?", type: "radio" },
+        { id: "places", label: "12. In all places or 1 place?", type: "radio" },
+        // موقع الإحداثيات هو سؤال إضافي يظهر فقط عند اختيار "One Place"
+        { id: "location-coordinates", label: "IF IN ONE PLACE ONLY, check coverage there and get the location coordinates:" },
+        { id: "contact-number", label: "13. Contact number:" },
+        { id: "additional-note", label: "14. Additional note:" }
+      ];
+
+      // لكل حقل: نتحقق من القيمة وفي حال عدم الإجابة نضيف حافة حمراء
+      fields.forEach(function (field) {
+        let value = "";
+        if (field.type === "radio") {
+          let selected = document.querySelector(`input[name="${field.id}"]:checked`);
+          value = selected ? selected.value : "";
+          // نضيف حافة حمراء لمجموعة الراديو إذا لم يتم الاختيار
+          let groupElem = document.getElementById("group-" + field.id);
+          if (!selected) {
+            groupElem.classList.add("red-border");
+          } else {
+            groupElem.classList.remove("red-border");
+          }
+        } else {
+          let inputElem = document.getElementById(field.id);
+          value = inputElem.value.trim();
+          if (value === "") {
+            inputElem.classList.add("red-border");
+          } else {
+            inputElem.classList.remove("red-border");
+          }
+        }
+        // إضافة السؤال والإجابة (إن وُجدت) إلى المعاينة
+        previewSection.innerHTML += `<p><strong>${field.label}</strong> ${value}</p>`;
+      });
+
+      // التحقق من سؤال "In all places or 1 place?" لإظهار حقل الإحداثيات عند اختيار "One Place"
+      let placesSelected = document.querySelector('input[name="places"]:checked');
+      if (placesSelected && placesSelected.value === "One Place") {
+        document.getElementById("group-location-coordinates").style.display = "block";
+        let locInput = document.getElementById("location-coordinates");
+        if (locInput.value.trim() === "") {
+          locInput.classList.add("red-border");
+        } else {
+          locInput.classList.remove("red-border");
+        }
+      } else {
+        document.getElementById("group-location-coordinates").style.display = "none";
+      }
+    });
+  </script>
+ <h3>Abdullah.61992</h3>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slow Internet Ticket</title>
+  <style>
+    body {
+      direction: ltr;
+      text-align: left;
+      font-family: Arial, sans-serif;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      padding: 5px;
+    }
+    .form-group label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input[type="text"],
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .form-group input[type="radio"] {
+      margin-right: 10px;
+    }
+    .form-group .radio-label {
+      margin-right: 15px;
+    }
+    .preview-section {
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    .red-border {
+      border: 2px solid red !important;
+    }
+  </style>
+</head>
+<body>
+ <h2>Slow Browsing - Local Data</h2>
+<h7>Complaint > Data > Browsing Issue > Slow internet </h7>
+<h4>OR</h4>
+<h5>Complaint > Data > Browsing Issue > Resync: OK</h5>
+<h6>**CAT Level 4 depends on the actual scenario</h6>
+<a href="https://altkb-ccc.com/article/9075
+">https://altkb-ccc.com/article/9075</a>
+  <form id="ticket-form">
+    <!-- Conversation # (not numbered in list) -->
+    <div class="form-group" id="group-conversation-number">
+      <label for="conversation-number">Conversation #:</label>
+      <input type="text" id="conversation-number" name="conversation-number" />
+    </div>
+
+    <!-- 1 -->
+    <div class="form-group" id="group-bundle-validity">
+      <label for="bundle-validity">1. The customer has a valid bundle with enough data allowance but can’t use data:</label>
+      <input type="text" id="bundle-validity" name="bundle-validity" />
+    </div>
+
+    <!-- 2 -->
+    <div class="form-group" id="group-msisdn">
+      <label for="msisdn">2. MSISDN:</label>
+      <input type="text" id="msisdn" name="msisdn" />
+    </div>
+
+    <!-- 3 -->
+    <div class="form-group" id="group-id-number">
+      <label for="id-number">3. ID number:</label>
+      <input type="text" id="id-number" name="id-number" />
+    </div>
+
+    <!-- 4 -->
+    <div class="form-group" id="group-service-issue">
+      <label>4. Which service does the customer face an issue on Data/Calls/Both?</label>
+      <input type="radio" id="service-data" name="service-issue" value="Data" />
+      <label for="service-data" class="radio-label">Data</label>
+      <input type="radio" id="service-calls" name="service-issue" value="Calls" />
+      <label for="service-calls" class="radio-label">Calls</label>
+      <input type="radio" id="service-both" name="service-issue" value="Both" />
+      <label for="service-both" class="radio-label">Both</label>
+    </div>
+
+    <!-- 5 -->
+    <div class="form-group" id="group-since-when">
+      <label for="since-when">5. Since when?</label>
+      <input type="text" id="since-when" name="since-when" />
+    </div>
+
+    <!-- 6 -->
+    <div class="form-group" id="group-resync-result">
+      <label for="resync-result">6. Resync Result is:</label>
+      <input type="text" id="resync-result" name="resync-result" />
+    </div>
+
+    <!-- 7 -->
+    <div class="form-group" id="group-issue-location">
+      <label>7. State that the issue location is everywhere:</label>
+      <input type="radio" id="location-all" name="issue-location" value="All Places" />
+      <label for="location-all" class="radio-label">All Places</label>
+      <input type="radio" id="location-one" name="issue-location" value="1 Place" />
+      <label for="location-one" class="radio-label">1 Place</label>
+    </div>
+
+    <!-- 8 -->
+    <div class="form-group" id="group-reset-network">
+      <label>8. Reset network settings is done?</label>
+      <input type="radio" id="reset-yes" name="reset-network" value="Yes" />
+      <label for="reset-yes" class="radio-label">Yes</label>
+      <input type="radio" id="reset-no" name="reset-network" value="No" />
+      <label for="reset-no" class="radio-label">No</label>
+    </div>
+
+    <!-- 9 -->
+    <div class="form-group" id="group-apn-screenshot">
+      <label>9. APN Settings (screenshot):</label>
+      <input type="radio" id="apn-yes" name="apn-screenshot" value="Yes" />
+      <label for="apn-yes" class="radio-label">Yes</label>
+      <input type="radio" id="apn-no" name="apn-screenshot" value="No" />
+      <label for="apn-no" class="radio-label">No</label>
+    </div>
+
+    <!-- 10 -->
+    <div class="form-group" id="group-signal-screenshot">
+      <label>10. Screenshot of the Signal bars if it is not showing in other photos?</label>
+      <input type="radio" id="signal-yes" name="signal-screenshot" value="Yes" />
+      <label for="signal-yes" class="radio-label">Yes</label>
+      <input type="radio" id="signal-no" name="signal-screenshot" value="No" />
+      <label for="signal-no" class="radio-label">No</label>
+    </div>
+
+    <!-- 11 -->
+    <div class="form-group" id="group-speedtest-screenshot">
+      <label>11. Screenshot of speed test results:</label>
+      <input type="radio" id="speedtest-yes" name="speedtest-screenshot" value="Yes" />
+      <label for="speedtest-yes" class="radio-label">Yes</label>
+      <input type="radio" id="speedtest-no" name="speedtest-screenshot" value="No" />
+      <label for="speedtest-no" class="radio-label">No</label>
+    </div>
+
+    <!-- 12 -->
+    <div class="form-group" id="group-try-another-device">
+      <label>12. Try another device:</label>
+      <input type="radio" id="device-yes" name="try-another-device" value="Yes" />
+      <label for="device-yes" class="radio-label">Yes</label>
+      <input type="radio" id="device-no" name="try-another-device" value="No" />
+      <label for="device-no" class="radio-label">No</label>
+    </div>
+
+    <!-- 13 -->
+    <div class="form-group" id="group-contact-number">
+      <label for="contact-number">13. Contact Number:</label>
+      <input type="text" id="contact-number" name="contact-number" />
+    </div>
+
+    <!-- Additional note -->
+    <div class="form-group" id="group-additional-note">
+      <label for="additional-note">14. Additional note:</label>
+      <textarea id="additional-note" name="additional-note"></textarea>
+    </div>
+
+    <button type="button" id="preview-button" style="background-color: green; color: white;">
+      Preview Ticket
+    </button>
+  </form>
+
+  <div class="preview-section" id="preview-section">
+    <h3>Slow internet</h3>
+    <!-- Preview content will be inserted here -->
+  </div>
+
+  <script>
+    document.getElementById("preview-button").addEventListener("click", function () {
+      let previewSection = document.getElementById("preview-section");
+      // إعادة تعيين المعاينة بعنوان Slow internet
+      previewSection.innerHTML = "<h3>Slow internet</h3>";
+
+      // تعريف الحقول بالترتيب المطلوب للمعاينة
+      // سنضيف Conversation # أولاً دون ترقيم ضمن القائمة
+      let conversation = document.getElementById("conversation-number").value.trim();
+      previewSection.innerHTML += `<p><strong>Conversation #:</strong> ${conversation}</p>`;
+
+      let fields = [
+        { id: "bundle-validity", label: "1. The customer has a valid bundle with enough data allowance but can’t use data:" },
+        { id: "msisdn", label: "2. MSISDN:" },
+        { id: "id-number", label: "3. ID number:" },
+        { id: "service-issue", label: "4. Which service does the customer face an issue on Data/Calls/Both?", type: "radio" },
+        { id: "since-when", label: "5. Since when?" },
+        { id: "resync-result", label: "6. Resync Result is:" },
+        { id: "issue-location", label: "7. State that the issue location is everywhere:", type: "radio" },
+        { id: "reset-network", label: "8. Reset network settings is done?", type: "radio" },
+        { id: "apn-screenshot", label: "9. APN Settings (screenshot):", type: "radio" },
+        { id: "signal-screenshot", label: "10. Screenshot of the Signal bars if it is not showing in other photos?", type: "radio" },
+        { id: "speedtest-screenshot", label: "11. Screenshot of speed test results:", type: "radio" },
+        { id: "try-another-device", label: "12. Try another device:", type: "radio" },
+        { id: "contact-number", label: "13. Contact Number:" },
+        { id: "additional-note", label: "14. Additional note:" }
+      ];
+
+      fields.forEach(function(field) {
+        let value = "";
+        if (field.type === "radio") {
+          let selected = document.querySelector(`input[name="${field.id}"]:checked`);
+          value = selected ? selected.value : "";
+          // تمييز مجموعة الراديو بحافة حمراء إذا لم يتم الاختيار
+          let groupElem = document.getElementById("group-" + field.id);
+          if (!selected) {
+            groupElem.classList.add("red-border");
+          } else {
+            groupElem.classList.remove("red-border");
+          }
+        } else {
+          let inputElem = document.getElementById(field.id);
+          value = inputElem.value.trim();
+          if (value === "") {
+            inputElem.classList.add("red-border");
+          } else {
+            inputElem.classList.remove("red-border");
+          }
+        }
+        previewSection.innerHTML += `<p><strong>${field.label}</strong> ${value}</p>`;
+      });
+    });
+  </script>
+ <h3>Abdullah.61992</h3>
+</body>
+</html>

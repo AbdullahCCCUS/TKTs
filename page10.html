@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MSISDN Termination </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: ltr;
+      text-align: left;
+      margin: 20px;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .red-border {
+      border: 2px solid red;
+      padding: 5px;
+    }
+    #preview {
+      margin-top: 30px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    #previewButton {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    #previewButton:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+ <h2>MSISDN Termination</h2>
+<a href="https://altkb-ccc.com/article/2727
+">https://altkb-ccc.com/article/2727</a>
+  <form id="ticketForm">
+    <div class="question" id="q1" data-question="Conversation #">
+      <label for="conversation">1. Conversation #</label><br>
+      <input type="text" id="conversation" name="q1">
+    </div>
+
+    <div class="question" id="q2" data-question="The customer wants to terminate this MSISDN:">
+      <label for="smsIssue">2. The customer wants to terminate  this MSISDN:</label><br>
+      <input type="text" id="terminate" name="q2">
+    </div>
+
+    <div class="question" id="q3" data-question="Last four digits of ID:">
+      <label for="idDigits">3. Last four digits of ID:</label><br>
+      <input type="text" id="idDigits" name="q3">
+    </div>
+
+    <div class="question" id="q4" data-question="Customer Name:">
+      <label for="customerName">4. Customer Name:</label><br>
+      <input type="text" id="customerName" name="q4">
+    </div>
+
+    <div class="question" id="q5" data-question="Reason:">
+      <label for="barStatus">5. Reason:</label><br>
+      <input type="text" id="Reason" name="q5">
+    </div>
+
+    <div class="question" id="q6" data-question="  Contact details:">
+      <label for="sinceWhen">6. Contact details:</label><br>
+      <input type="text" id="Contact details:" name="q6">
+    </div>
+
+   
+
+    <div class="question" id="q7" data-question="Phone number:">
+      <label for="samples">7. Phone number:</label><br>
+      <input type="text" id="Phone number" name="q7">
+    </div>
+
+    <div class="question" id="q8" data-question=" Additional note:">
+      <label for="phoneNumber">8. Additional note:</label><br>
+      <input type="text" id="Additional note:" name="q8">
+    </div>
+
+    <button type="button" id="previewButton">Preview Ticket</button>
+  </form>
+
+  <div id="preview">
+    <h2>Ticket Preview</h2>
+    <div id="previewContent"></div>
+  </div>
+
+  <script>
+    document.getElementById('previewButton').addEventListener('click', function() {
+      // Clear previous preview
+      var previewContent = document.getElementById('previewContent');
+      previewContent.innerHTML = '';
+      
+      // Iterate through each question
+      var questions = document.querySelectorAll('.question');
+      
+      questions.forEach(function(qDiv, index) {
+        // Remove any previous red border
+        qDiv.classList.remove('red-border');
+  
+        var questionText = qDiv.getAttribute('data-question');
+        var answer = '';
+  
+        // Check for text input first
+        var textInput = qDiv.querySelector('input[type="text"]');
+        if(textInput) {
+          answer = textInput.value.trim();
+          if(answer === '') {
+            qDiv.classList.add('red-border');
+          }
+        } else {
+          // Otherwise, check for a selected radio button
+          var selectedRadio = qDiv.querySelector('input[type="radio"]:checked');
+          if(selectedRadio) {
+            answer = selectedRadio.value;
+          } else {
+            qDiv.classList.add('red-border');
+          }
+        }
+        
+        // Build preview line (if answer is provided, append it)
+        var displayText = (index + 1) + '. ' + questionText;
+        if(answer !== '') {
+          displayText += ' - ' + answer;
+        }
+  
+        var p = document.createElement('p');
+        p.textContent = displayText;
+        previewContent.appendChild(p);
+      });
+    });
+  </script>
+ <h3>Abdullah.61992</h3>
+</body>
+</html>

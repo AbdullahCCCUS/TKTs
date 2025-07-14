@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>eSIM QR Code Doesn't Work</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: ltr;
+      text-align: left;
+      margin: 20px;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .red-border {
+      border: 2px solid red;
+      padding: 5px;
+    }
+    #preview {
+      margin-top: 30px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    #previewButton {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    #previewButton:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+ <h2>eSIM QR Code Doesn't Work</h2>
+<a href="https://altkb-ccc.com/article/5777
+">https://altkb-ccc.com/article/5777</a>
+  <form id="ticketForm">
+    <div class="question" id="q1" data-question="Conversation #">
+      <label for="conversation">1. Conversation #</label><br>
+      <input type="text" id="conversation" name="q1">
+    </div>
+
+    <div class="question" id="q2" data-question="Customer name:">
+      <label for="customerName">2. Customer name:</label><br>
+      <input type="text" id="customerName" name="q2">
+    </div>
+
+    <div class="question" id="q3" data-question="ID:">
+      <label for="id">3. ID:</label><br>
+      <input type="text" id="id" name="q3">
+    </div>
+
+    <div class="question" id="q4" data-question="The customer can’t add his eSIM QR code.">
+      <label for="qrCodeIssue">4. The customer can’t add his eSIM QR code:</label><br>
+      <input type="text" id="qrCodeIssue" name="q4">
+    </div>
+
+    <div class="question" id="q5" data-question="MSISDN Status:">
+      <label for="msisdnStatus">5. MSISDN Status:</label><br>
+      <input type="text" id="msisdnStatus" name="q5">
+    </div>
+
+    <div class="question" id="q6" data-question="Error Screenshot:">
+      <label for="errorScreenshot">6. Error Screenshot:</label><br>
+      <input type="radio" id="errorScreenshotYes" name="q6" value="yes">
+      <label for="errorScreenshotYes">Yes</label>
+      <input type="radio" id="errorScreenshotNo" name="q6" value="no">
+      <label for="errorScreenshotNo">No</label>
+    </div>
+
+    <div class="question" id="q7" data-question="WIFI Used:">
+      <label for="wifiUsed">7. WIFI Used:</label><br>
+      <input type="radio" id="wifiUsedYes" name="q7" value="yes">
+      <label for="wifiUsedYes">Yes</label>
+      <input type="radio" id="wifiUsedNo" name="q7" value="no">
+      <label for="wifiUsedNo">No</label>
+    </div>
+
+    <div class="question" id="q8" data-question="Contact number:">
+      <label for="contactNumber">8. Contact number:</label><br>
+      <input type="text" id="contactNumber" name="q8">
+    </div>
+
+    <div class="question" id="q9" data-question="Additional note:">
+      <label for="additionalNote">9. Additional note:</label><br>
+      <input type="text" id="additionalNote" name="q9">
+    </div>
+
+    <button type="button" id="previewButton">Preview Ticket</button>
+  </form>
+
+  <div id="preview">
+    <h2>Ticket Preview</h2>
+    <div id="previewContent"></div>
+  </div>
+
+  <script>
+    document.getElementById('previewButton').addEventListener('click', function() {
+      // Clear previous preview
+      var previewContent = document.getElementById('previewContent');
+      previewContent.innerHTML = '';
+      
+      // Iterate through each question
+      var questions = document.querySelectorAll('.question');
+      
+      questions.forEach(function(qDiv, index) {
+        // Remove any previous red border
+        qDiv.classList.remove('red-border');
+  
+        var questionText = qDiv.getAttribute('data-question');
+        var answer = '';
+  
+        // Check for text input first
+        var textInput = qDiv.querySelector('input[type="text"]');
+        if(textInput) {
+          answer = textInput.value.trim();
+          if(answer === '') {
+            qDiv.classList.add('red-border');
+          }
+        } 
+        
+        // Check for radio button input
+        var radioButtons = qDiv.querySelectorAll('input[type="radio"]:checked');
+        if(radioButtons.length > 0) {
+          answer = radioButtons[0].value;
+        }
+
+        // Build preview line (if answer is provided, append it)
+        var displayText = (index + 1) + '. ' + questionText;
+        if(answer !== '') {
+          displayText += ' - ' + answer;
+        }
+  
+        var p = document.createElement('p');
+        p.textContent = displayText;
+        previewContent.appendChild(p);
+      });
+    });
+  </script>
+ <h3>Abdullah.61992</h3>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>can't make local calls</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: ltr;
+      text-align: left;
+      margin: 20px;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .red-border {
+      border: 2px solid red;
+      padding: 5px;
+    }
+    #preview {
+      margin-top: 30px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    #previewButton {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    #previewButton:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+ <h2>Can't Make Local Calls</h2>
+<a href="https://altkb-ccc.com/article/4809
+">https://altkb-ccc.com/article/4809</a>
+  <form id="ticketForm">
+    <div class="question" id="q1" data-question="Conversation #">
+      <label for="conversation">1. Conversation #</label><br>
+      <input type="text" id="conversation" name="q1">
+    </div>
+
+    <div class="question" id="q2" data-question="The customer has a valid bundle with enough minutes allowance but can't make calls on this MSISDN:">
+      <label for="validBundle">2. The customer has a valid bundle with enough minutes allowance but can't make calls on this MSISDN:</label><br>
+      <input type="text" id="validBundle" name="q2">
+    </div>
+
+    <div class="question" id="q3" data-question="MSISDN:">
+      <label for="msisdn">3. MSISDN:</label><br>
+      <input type="text" id="msisdn" name="q3">
+    </div>
+
+    <div class="question" id="q4" data-question="Last 4 digits of the Iqama/National ID:">
+      <label for="idDigits">4. Last 4 digits of the Iqama/National ID:</label><br>
+      <input type="text" id="idDigits" name="q4">
+    </div>
+
+    <div class="question" id="q5" data-question="Customer Name:">
+      <label for="customerName">5. Customer Name:</label><br>
+      <input type="text" id="customerName" name="q5">
+    </div>
+
+    <div class="question" id="q6" data-question="Since when?">
+      <label for="sinceWhen">6. Since when?</label><br>
+      <input type="text" id="sinceWhen" name="q6">
+    </div>
+
+    <div class="question" id="q7" data-question="Issue is inside KSA or while roaming?">
+      <label>7. Issue is inside KSA or while roaming?</label><br>
+      <input type="radio" id="inside" name="q7" value="inside">
+      <label for="inside">inside</label>
+      <input type="radio" id="outside" name="q7" value="outside">
+      <label for="outside">outside</label>
+    </div>
+
+    <div class="question" id="q8" data-question="Resync Result is:">
+      <label for="resyncResult">8. Resync Result is:</label><br>
+      <input type="text" id="resyncResult" name="q8">
+    </div>
+
+    <div class="question" id="q9" data-question="To all numbers/operators or 1 number/operator?">
+      <label>9. To all numbers/operators or 1 number/operator?</label><br>
+      <input type="radio" id="allNumbers" name="q9" value="all numbers">
+      <label for="allNumbers">all numbers</label>
+      <input type="radio" id="oneNumber" name="q9" value="1 number/operator">
+      <label for="oneNumber">1 number/operator</label>
+    </div>
+
+    <div class="question" id="q10" data-question="Call 900 and was able to hear the voice message?">
+      <label>10. Call 900 and was able to hear the voice message?</label><br>
+      <input type="radio" id="voiceYes" name="q10" value="yes">
+      <label for="voiceYes">yes</label>
+      <input type="radio" id="voiceNo" name="q10" value="no">
+      <label for="voiceNo">no</label>
+    </div>
+
+    <div class="question" id="q11" data-question="Can receive calls/SMS?">
+      <label>11. Can receive calls/SMS?</label><br>
+      <input type="radio" id="callsYes" name="q11" value="yes">
+      <label for="callsYes">yes</label>
+      <input type="radio" id="callsNo" name="q11" value="no">
+      <label for="callsNo">no</label>
+    </div>
+
+    <div class="question" id="q12" data-question="If he has a data plan, does data work fine?">
+      <label>12. If he has a data plan, does data work fine?</label><br>
+      <input type="radio" id="dataYes" name="q12" value="yes">
+      <label for="dataYes">yes</label>
+      <input type="radio" id="dataNo" name="q12" value="no">
+      <label for="dataNo">no</label>
+      <input type="radio" id="noPlan" name="q12" value="no plan">
+      <label for="noPlan">no plan</label>
+    </div>
+
+    <div class="question" id="q13" data-question="Tried in another device?">
+      <label>13. Tried in another device?</label><br>
+      <input type="radio" id="deviceYes" name="q13" value="yes">
+      <label for="deviceYes">yes</label>
+      <input type="radio" id="deviceNo" name="q13" value="no">
+      <label for="deviceNo">no</label>
+      <input type="radio" id="deviceEsim" name="q13" value="Esim">
+      <label for="deviceEsim">Esim</label>
+    </div>
+
+    <div class="question" id="q14" data-question="In all places or 1 place?">
+      <label>14. In all places or 1 place?</label><br>
+      <input type="radio" id="placesAll" name="q14" value="all places">
+      <label for="placesAll">all places</label>
+      <input type="radio" id="placesOne" name="q14" value="1 place">
+      <label for="placesOne">1 place</label>
+    </div>
+
+    <div class="question" id="q15" data-question="3 Fresh samples within 7 days:">
+         <label for="3 Fresh samples within 7 days">15.3 Fresh samples within 7 days:</label><br>
+      <input type="text" id="3 Fresh samples within 7 days" name="q15">
+    </div>
+
+    <div class="question" id="q16" data-question="Contact details:">
+      <label for="contactDetails">16. Contact details:</label><br>
+      <input type="text" id="contactDetails" name="q16">
+    </div>
+
+    <div class="question" id="q17" data-question="Phone number:">
+      <label for="phoneNumber">17. Phone number:</label><br>
+      <input type="text" id="phoneNumber" name="q17">
+    </div>
+
+    <div class="question" id="q18" data-question="Additional note:">
+      <label for="additionalNote">18. Additional note:</label><br>
+      <input type="text" id="additionalNote" name="q18">
+    </div>
+
+    <button type="button" id="previewButton">Preview Ticket</button>
+  </form>
+
+  <div id="preview">
+    <h2>Ticket Preview</h2>
+    <div id="previewContent"></div>
+  </div>
+
+  <script>
+    document.getElementById('previewButton').addEventListener('click', function() {
+      // Clear previous preview
+      var previewContent = document.getElementById('previewContent');
+      previewContent.innerHTML = '';
+      
+      // Iterate through each question
+      var questions = document.querySelectorAll('.question');
+      
+      questions.forEach(function(qDiv, index) {
+        // Remove any previous red border
+        qDiv.classList.remove('red-border');
+  
+        var questionText = qDiv.getAttribute('data-question');
+        var answer = '';
+  
+        // Check for text input first
+        var textInput = qDiv.querySelector('input[type="text"]');
+        if(textInput) {
+          answer = textInput.value.trim();
+          if(answer === '') {
+            qDiv.classList.add('red-border');
+          }
+        } else {
+          // Otherwise, check for a selected radio button
+          var selectedRadio = qDiv.querySelector('input[type="radio"]:checked');
+          if(selectedRadio) {
+            answer = selectedRadio.value;
+          } else {
+            qDiv.classList.add('red-border');
+          }
+        }
+        
+        // Build preview line (if answer is provided, append it)
+        var displayText = (index + 1) + '. ' + questionText;
+        if(answer !== '') {
+          displayText += ' - ' + answer;
+        }
+  
+        var p = document.createElement('p');
+        p.textContent = displayText;
+        previewContent.appendChild(p);
+      });
+    });
+  </script>
+ <h3>Abdullah.61992</h3>
+</body>
+</html>

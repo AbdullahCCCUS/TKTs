@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ownership Transfer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: ltr;
+      text-align: left;
+      margin: 20px;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .red-border {
+      border: 2px solid red;
+      padding: 5px;
+    }
+    #preview {
+      margin-top: 30px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    #previewButton {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    #previewButton:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+ <h2> Ownership Transfer</h2>
+<a href="https://altkb-ccc.com/article/2686
+">https://altkb-ccc.com/article/2686</a>
+  <form id="ticketForm">
+    <div class="question" id="q1" data-question="Conversation #">
+      <label for="conversation">1. Conversation #</label><br>
+      <input type="text" id="conversation" name="q1">
+    </div>
+
+    <div class="question" id="q2" data-question="The customer wants to transfer ownership of this MSISDN:">
+      <label for="qrCodeIssue">2.The customer wants to transfer ownership of this MSISDN:</label><br>
+      <input type="text" id="The customer wants to transfer ownership of this MSISDN" name="q2">
+    </div>
+
+    <div class="question" id="q3" data-question="Original operato:">
+      <label for="msisdn">3.Original operato:</label><br>
+      <input type="text" id="Original operato" name="q3">
+    </div>
+
+    <div class="question" id="q4" data-question="ItsOn status (Must be active):">
+      <label for="id">4.ItsOn status (Must be active):</label><br>
+      <input type="text" id="ItsOn status (Must be active)" name="q4">
+    </div>
+
+    <div class="question" id="q5" data-question="Current Owner contact number:">
+      <label for="customerName">5.Current Owner contact number:</label><br>
+      <input type="text" id="Current Owner contact number" name="q5">
+    </div>
+
+    <div class="question" id="q6" data-question="last 4 digits of the Iqama/National ID">
+      <label for="orderNumber">6. last 4 digits of the Iqama/National ID</label><br>
+      <input type="text" id="last 4 digits of the Iqama/National ID" name="q6">
+    </div>
+
+    <div class="question" id="q7" data-question="New Owner contact number">
+      <label for="orderStatus">7.New Owner contact number</label><br>
+      <input type="text" id="New Owner contact number" name="q7">
+    </div>
+
+    <div class="question" id="q8" data-question=" last 4 digits of the Iqama/National ID :">
+      <label for="authStatus">8. last 4 digits of the Iqama/National ID :</label><br>
+      <input type="text" id=" last 4 digits of the Iqama/National ID " name="q8">
+    </div>
+
+    <div class="question" id="q9" data-question="The current owner's name:">
+      <label for="contactNumber">9.The current owner's name:</label><br>
+      <input type="text" id="The current owner's name" name="q9">
+    </div>
+
+    <div class="question" id="q10" data-question=" The new owner's name:">
+      <label for="additionalNote">10. The new owner's name:</label><br>
+      <input type="text" id=" The new owner's name" name="q10">
+    </div>
+
+    <div class="question" id="q11" data-question=" Address: City, neighborhood, street:">
+      <label for="additionalNote">11.Address: City, neighborhood, street:</label><br>
+      <input type="text" id=" Address: City, neighborhood, street" name="q11">
+    </div>
+
+    <div class="question" id="q12" data-question="The customer agreed to pay for a new SIM with initial benefits.">
+      <label for="The customer agreed to pay for a new SIM with initial benefits">12. The customer agreed to pay for a new SIM with initial benefits:</label><br>
+      <input type="radio" id="coverageIssueYes" name="q12" value="yes">
+      <label for="The customer agreed to pay for a new SIM with initial benefitsYes">Yes</label>
+      <input type="radio" id="The customer agreed to pay for a new SIM with initial benefits No" name="q12" value="no">
+      <label for="coverageIssueNo">No</label>
+    </div>
+
+  <div class="question" id="q13" data-question="The number is not linked to the new owner's Absher account.">
+      <label for="The number is not linked to the new owner's Absher account.">12.The number is not linked to the new owner's Absher account. :</label><br>
+      <input type="radio" id="coverageIssueYes" name="q13" value="yes">
+      <label for="The customer agreed to pay for a new SIM with initial benefitsYes">Yes</label>
+      <input type="radio" id="The customer agreed to pay for a new SIM with initial benefits No" name="q13" value="no">
+      <label for="coverageIssueNo">No</label>
+    </div>
+
+
+    <div class="question" id="q14" data-question="The registered email of the new owner to make the order from:">
+      <label for="additionalNote">14.The registered email of the new owner to make the order from:</label><br>
+      <input type="text" id="The registered email of the new owner to make the order from:" name="q14">
+
+    </div>
+  
+  <div class="question" id="q15" data-question="Additional note:">
+      <label for="additionalNote">15. Additional note:</label><br>
+      <input type="text" id="additionalNote" name="q15">
+    </div>
+
+    <button type="button" id="previewButton">Preview Ticket</button>
+  </form>
+
+  <div id="preview">
+    <h2>Ticket Preview</h2>
+    <div id="previewContent"></div>
+  </div>
+
+  <script>
+    document.getElementById('previewButton').addEventListener('click', function() {
+      // Clear previous preview
+      var previewContent = document.getElementById('previewContent');
+      previewContent.innerHTML = '';
+      
+      // Iterate through each question
+      var questions = document.querySelectorAll('.question');
+      
+      questions.forEach(function(qDiv, index) {
+        // Remove any previous red border
+        qDiv.classList.remove('red-border');
+  
+        var questionText = qDiv.getAttribute('data-question');
+        var answer = '';
+  
+        // Check for text input first
+        var textInput = qDiv.querySelector('input[type="text"]');
+        if(textInput) {
+          answer = textInput.value.trim();
+          if(answer === '') {
+            qDiv.classList.add('red-border');
+          }
+        } 
+          // Check for radio button input
+        var radioButtons = qDiv.querySelectorAll('input[type="radio"]:checked');
+        if(radioButtons.length > 0) {
+          answer = radioButtons[0].value;
+        }
+
+        // Build preview line (if answer is provided, append it)
+        var displayText = (index + 1) + '. ' + questionText;
+        if(answer !== '') {
+          displayText += ' - ' + answer;
+        }
+  
+        var p = document.createElement('p');
+        p.textContent = displayText;
+        previewContent.appendChild(p);
+      });
+    });
+  </script>
+ <h3>Abdullah.61992</h3>
+</body>
+</html>
